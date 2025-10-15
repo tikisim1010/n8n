@@ -104,6 +104,28 @@
                     </ul>
                 `
             },
+            'teknis-prompt-chatgpt': {
+                tag: 'Teknik Prompt',
+                title: 'Mengoptimalkan Prompt ChatGPT untuk Video AI',
+                subtitle: 'Strategi mengubah perintah sederhana menjadi prompt cinematic yang efektif.',
+                contentHtml: `
+                    <p class="text-lg">Pada alur kerja otomatisasi video, langkah krusial adalah memastikan model AI generatif (seperti Gemini Veo) menerima instruksi yang sangat detail dan deskriptif, atau disebut prompt "cinematic".</p>
+
+                    <h4 class="text-2xl font-bold text-indigo-600 mt-8 mb-4">Kenapa Perlu ChatGPT?</h4>
+                    <ul class="list-disc list-inside space-y-2 pl-4">
+                        <li>**Input User Simpel:** Perintah dari Telegram (misalnya: <code>/buatvideo anjing lari</code>) seringkali terlalu sederhana.</li>
+                        <li>**Kebutuhan Detail AI Video:** Model video AI membutuhkan detail tentang pencahayaan, sudut kamera, gaya visual, dan emosi (misalnya: <code>'Video sinematik 4K, sudut rendah, anjing Beagle lucu berlari di ladang gandum saat matahari terbenam.'</code>).</li>
+                        <li>**Fungsi ChatGPT:** Node ChatGPT berfungsi sebagai "penerjemah kreatif" yang mengambil input sederhana user dan mengubahnya menjadi prompt yang kaya visual yang optimal untuk Gemini Veo.</li>
+                    </ul>
+
+                    <h4 class="text-2xl font-bold text-indigo-600 mt-8 mb-4">Contoh Instruksi untuk ChatGPT (System Prompt):</h4>
+                    <p class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-auto">
+                        "Anda adalah Prompt Engineer terbaik. Tugas Anda adalah mengambil perintah dari user dan mengubahnya menjadi prompt yang sinematik, visual, dan detail untuk model AI Text-to-Video. Sertakan detail seperti: resolusi (4K), jenis kamera (misalnya DSLR), pencahayaan (misalnya golden hour), dan gaya visual (misalnya hyperrealistic, anime)."
+                    </p>
+
+                    <p class="mt-6 text-lg">Dengan ini, kualitas video yang dihasilkan akan jauh lebih baik dan sesuai ekspektasi sinematik.</p>
+                `
+            },
             'intro-ai-generatif': {
                 tag: 'Dasar AI',
                 title: 'Pengantar AI Generatif dan Aplikasinya',
@@ -119,15 +141,8 @@
                     <p class="mt-4 text-lg">Menguasai alat-alat ini adalah kunci untuk otomasi konten di masa depan.</p>
                 `
             }
+            
             // --- TAMBAHKAN POSTINGAN BARU LAINNYA DI SINI ---
-            /*
-            'nama-post-anda': {
-                tag: 'Kategori Baru',
-                title: 'Judul Postingan Baru Anda',
-                subtitle: 'Ringkasan singkat di sini.',
-                contentHtml: '<p>Masukkan semua konten HTML untuk postingan baru di sini.</p>'
-            },
-            */
         };
 
         // --- 2. FUNGSI TEMPLATING DAN ROUTING SEDERHANA ---
@@ -207,7 +222,8 @@
         // Template untuk Halaman Semua Materi
         function renderAllPosts() {
             let allPostsHtml = '';
-            Object.keys(postData).forEach(key => {
+            // Gunakan Object.keys().reverse() untuk menampilkan post terbaru di atas
+            Object.keys(postData).reverse().forEach(key => {
                 const post = postData[key];
                 allPostsHtml += `
                     <a href="?post=${key}" class="flex items-center bg-white p-6 rounded-xl content-card border border-gray-100 hover:shadow-xl transition duration-300">
