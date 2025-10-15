@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintu Ilmu - Kuasai Otomasi AI</title>
+    <!-- PERUBAHAN 1: Judul Halaman Diperbarui -->
+    <title>Pintu Ilmu | Timothy Tarigan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -30,10 +33,14 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Pintu Ilmu</h1>
-            <nav class="space-x-4">
+            <nav class="space-x-4 flex items-center">
                 <a href="?page=home" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Beranda</a>
                 <a href="?page=all" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium">Semua Materi</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600 transition duration-150 font-medium hidden sm:inline">Kontak</a>
+                <!-- PERUBAHAN 2: Tautan Kontak WhatsApp dengan Ikon Font Awesome -->
+                <a href="https://wa.me/62895611705178" target="_blank" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-xl font-bold text-sm transition duration-150 flex items-center ml-4 shadow-lg">
+                    <i class="fab fa-whatsapp text-lg mr-2"></i> <!-- Ikon WhatsApp -->
+                    WhatsApp
+                </a>
             </nav>
         </div>
     </header>
@@ -49,7 +56,12 @@
         <footer class="mt-16 bg-gray-900 text-white p-8">
             <div class="max-w-7xl mx-auto text-center">
                 <p class="text-lg font-semibold mb-2">Pintu Ilmu: Otomasi & AI</p>
-                <p class="text-sm text-gray-400">© 2024. Hak Cipta Dilindungi. Belajar Cerdas, Bekerja Efisien.</p>
+                <p class="text-sm text-gray-400">Hubungi kami: 
+                    <a href="https://wa.me/62895611705178" target="_blank" class="text-green-400 hover:text-green-300 font-bold transition flex items-center justify-center mt-1">
+                         <i class="fab fa-whatsapp text-base mr-2"></i> WA 0895611705178
+                    </a>
+                </p>
+                <p class="text-sm text-gray-400 mt-1">© 2024. Hak Cipta Dilindungi. Belajar Cerdas, Bekerja Efisien.</p>
             </div>
         </footer>
 
@@ -141,7 +153,6 @@
                     <p class="mt-4 text-lg">Menguasai alat-alat ini adalah kunci untuk otomasi konten di masa depan.</p>
                 `
             }
-            
             // --- TAMBAHKAN POSTINGAN BARU LAINNYA DI SINI ---
         };
 
